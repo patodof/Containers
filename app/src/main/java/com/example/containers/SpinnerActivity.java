@@ -41,7 +41,7 @@ public class SpinnerActivity extends AppCompatActivity {
         lenguajes_programacion.add(".NET");
 
         //crear Adapater
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, lenguajes_programacion );
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lenguajes_programacion );
         //asociar el adapter ya con datos a nuestro container spinner
         spinner_ejemplo.setAdapter(adapter);
     }
