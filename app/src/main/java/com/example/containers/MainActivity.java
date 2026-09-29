@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     //VARIABLES DE LA APLICACION
     Button boton_spiner ;
+    Button boton_recycler ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         boton_spiner = findViewById(R.id.boton_spiner);
         boton_spiner.setOnClickListener( v ->
                     startActivity( new Intent(MainActivity.this, SpinnerActivity.class) )
+                );
+
+        boton_spiner = findViewById(R.id.boton_recycler);
+        boton_spiner.setOnClickListener( v ->
+                    startActivity( new Intent(MainActivity.this, RecyclerActivity.class) )
                 );
     }
 }

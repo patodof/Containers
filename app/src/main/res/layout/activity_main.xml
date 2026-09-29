@@ -14,11 +14,26 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="20dp">
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ejemplo de Containers"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/boton_spiner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Spiner" />
+
+        <Button
+            android:id="@+id/boton_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recycler Contactos" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

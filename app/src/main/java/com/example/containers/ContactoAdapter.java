@@ -1,8 +1,11 @@
 package com.example.containers;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -34,4 +37,37 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.ViewHo
         datos = datos_usuario ;
     }
 
+    //1.- Necesario para RecyclerView
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //Cargar XML
+        View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.contacto_item, parent, false);
+        //Crear el ViewHolder
+        ViewHolder viewHolder = new ViewHolder(vista);
+        return viewHolder;
+    }
+
+    //2 Enlaza los datos del xml al objeto actual
+    @Override
+    public void onBindViewHolder(ViewHolder viewHolder, final int posicion_actual )
+    {
+        //obtener el objeto actual que se va a cargar en el ViewHolder
+        ContactoModel contactoActual = datos.get(posicion_actual);
+        //cargar los datos del contacto al ViewHolder
+        viewHolder.nombre.setText(contactoActual.NOMBRE);
+        viewHolder.telefono.setText(contactoActual.TELEFONO);
+        viewHolder.correo.setText(contactoActual.CORREO);
+    }
+
+    @Override
+    public int getItemCount() {
+        return datos.size();
+    }
 }
+
+
+
+
+
+
